@@ -59,6 +59,12 @@ class UserType extends AbstractType
                 'attr' => array(
                     'class' => 'form-bio form-control'
                 )
+            )) ->add('diplome', TextType::class, array(
+                'label' => 'Diplome',
+                'required' => false,
+                'attr' => array(
+                    'class' => 'form-diplome form-control'
+                )
             ))
             ->add('image', FileType::class, array(
                 'label' => 'Photo',

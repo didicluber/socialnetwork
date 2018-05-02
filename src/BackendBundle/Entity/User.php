@@ -58,6 +58,7 @@ class User implements UserInterface, \Serializable
      */
     private $image;
 
+
     /**
      * campo de BD que va a actuar como username
      */
@@ -344,5 +345,33 @@ class User implements UserInterface, \Serializable
         return $this->image;
     }
 
-}
+    /**
+     * @var string
+     */
+    private $diplome;
 
+
+    /**
+     * Set diplome
+     *
+     * @param string $diplome
+     *
+     * @return User
+     */
+    public function setDiplome($diplome)
+    {
+        $this->diplome = $diplome;
+
+        return $this;
+    }
+
+    /**
+     * Get diplome
+     *
+     * @return string
+     */
+    public function getDiplome()
+    {
+        return $this->diplome;
+    }
+}

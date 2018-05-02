@@ -39,7 +39,7 @@
                                     {% endif %}
                                     " data-followed="{{ user.id }}">
                         <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-                        Seguir
+                        Suivre
                     </button>
 
                     <button class="btn btn-sm btn-default btn-unfollow
@@ -59,8 +59,13 @@
                 {{ user.nick }}
             </span>
         </div>
+        <div  class="diplome">
+        <h5>  <span class="glyphicon glyphicon-education">  </span>  Diplome : </h5>
+           {{ user.diplome }}
+        </div>
 
         <div class="bio">
+            <h5>Biographie </h5>
             {{ user.bio }}
         </div>
 
@@ -120,6 +125,7 @@
             </div>
 
         </div>
+
 
         <div id="user-publications">
             {% for publication in publications %}

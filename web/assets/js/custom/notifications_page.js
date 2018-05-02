@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     ias.extension(new IASTriggerExtension({
-        text: 'Ver más notificaciones',
+        text: 'voir plus de notifications',
         offset: 3
     }));
 
@@ -18,7 +18,7 @@ $(document).ready(function () {
     }));
 
     ias.extension(new IASNoneLeftExtension({
-        text: 'No hay más notificaciones'
+        text: 'Plus de notifications'
     }));
 
     ias.on('ready', function(event) {

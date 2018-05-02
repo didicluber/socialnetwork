@@ -232,6 +232,11 @@ body {
     margin-bottom: 20px;
 }
 
+.profile-box .diplome {
+    margin: 0px auto;
+    text-align: center;
+}
+
 .profile-box #user_stats {
     margin: 0px auto;
     margin-bottom: 20px;

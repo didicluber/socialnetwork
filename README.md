@@ -1,19 +1,34 @@
-# Reseau social pour ecm paris client #1204
+# Red social estilo Twitter en Symfony 3.1
 
+## Video Demostración
 
-## Instruction
+[Ver video Demo][14]
 
-### Commande d'installation
+## Instrucciones
 
-*Installer les dependance:
+### Comandos de instalación
+
+* Instalar dependencias:
 
  `$ composer install`
 
-* cree la base de donne et la configuer grace au parameters.yml
-
-`$ php bin/console doctrine:database:create`
-
-* Cree les tables
+* Crear base de datos y configurar parametros en parameters.yml
+* Crear estructura de tablas
 
 `$ php bin/console doctrine:schema:create`
 
+* Importar datos sql de prueba de app/Resources
+
+### Datos de acceso a un usuario
+
+email: fran@aragon.com
+
+password: fran
+
+### Comandos útiles
+
+* Limpiar cache y logs
+
+`$ php bin/console cache:clear --env=prod --no-debug`
+
+[14]: https://www.youtube.com/watch?v=cFny57BugXI
