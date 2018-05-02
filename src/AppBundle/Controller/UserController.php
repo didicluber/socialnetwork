@@ -26,7 +26,7 @@ class UserController extends Controller
     }
 
     /**
-     * Autentificacion de usuarios usando el servicio de Symfony
+     *
      *
      * @param Request $request
      * @return $this
@@ -50,10 +50,6 @@ class UserController extends Controller
     }
 
     /**
-     * Carga vista con formulario definido en clase RegisterType
-     * Configura datos de formulario en objeto User y el password cifrado
-     * Usa session para poder mostrar mensajes en el proceso de registro.
-     *
      * @param Request $request
      * @return $this
      */
@@ -98,34 +94,31 @@ class UserController extends Controller
                     $flush = $em->flush();//guardar en BD
 
                     if ($flush == null) {
-                        $status = "Te has registrado correctamente";
+                        $status = "Vous vous êtes inscrit correctement";
 
                         $this->session->getFlashBag()->add("status", $status);
                         return $this->redirect("login");
                     } else {
-                        $status = "Error al registrar";
+                        $status = "Erreur d'inscription";
                     }
 
                 } else {
-                    $status = "El usuario ya existe !!";
+                    $status = "L'utilisateur existe déjà!";
                 }
 
             } else {
-                $status = "No te has registrado correctamente !!";
+                $status = "Vous n'êtes pas enregistré correctement !!";
             }
 
             $this->session->getFlashBag()->add("status", $status);
         }
 
-        // crea vista con formulario
         return $this->render('AppBundle:User:register.html.twig', array(
             "form" => $form->createView()
         ));
     }
 
     /**
-     * Método que recoge el dato nick del form de registro via AJAX
-     * comprueba si nick esta en uso o no , devuelve una respuesta http con un string
      *
      * @param Request $request
      * @return Response
@@ -155,12 +148,6 @@ class UserController extends Controller
     }
 
     /**
-     * Carga vista con formulario definido en clase UserType
-     * Configura datos de formulario en objeto User de la session
-     * Comprueba datos de email y nick antes de guardar datos
-     * Guarda imagen y configura dato de imagen
-     * Usa session para poder mostrar mensajes en el proceso de registro.
-     *
      * @param Request $request
      * @return $this
      */
@@ -184,9 +171,7 @@ class UserController extends Controller
 
                 $user_isset = $query->getResult();
 
-                // si los datos nuevos (email o nick) del form de edicion de perfil
-                // en la base de datos no hay otro email ni nick igual
-                // o si los datos de session (email y nick) son iguales a los que hay en (BD y datos form)
+
                 if (count($user_isset) == 0 || ($user->getEmail() == $user_isset[0]->getEmail() && $user->getNick() == $user_isset[0]->getNick())) {
 
                     // upload file
@@ -209,17 +194,17 @@ class UserController extends Controller
                     $flush = $em->flush();//guardar en BD
 
                     if ($flush == null) {
-                        $status = "Has modificado tus datos correctamente";
+                        $status = "Vous avez modifié vos données correctement";
                     } else {
-                        $status = "No se han podido modificar tus datos correctamente";
+                        $status = "Vos données n'ont pas pu être modifiées correctement";
                     }
 
                 } else {
-                    $status = "Hay ya un usuario existente con el email o nick";
+                    $status = "Il y a déjà un utilisateur avec email ou pseudo";
                 }
 
             } else {
-                $status = "No se han modificado tus datos correctamente";
+                $status = "Vos données n'ont pas été modifiées correctement";
             }
 
             $this->session->getFlashBag()->add("status", $status);
@@ -232,9 +217,6 @@ class UserController extends Controller
     }
 
     /**
-     * Carga lista de usuarios y los pasa al objeto que pagina los resultados
-     * la paginación de resultados se pasa a la vista
-     *
      * @param Request $request
      * @return $this
      */
@@ -259,9 +241,6 @@ class UserController extends Controller
     }
 
     /**
-     * Realiza búsqueda con el parametro request y
-     * muestra resultados en vista users
-     *
      * @param Request $request
      * @return $this
      */
@@ -296,8 +275,6 @@ class UserController extends Controller
     }
 
     /**
-     * Carga vista con datos del perfil de un usuario mostrando sus publicaciones
-     *
      * @param Request $request
      * @param null $nick
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
@@ -326,8 +303,8 @@ class UserController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $query,
-            $request->query->getInt('page', 1), // parametro request de paginacion y en que num de pagina empieza
-            5 //numero de registros por paginas
+            $request->query->getInt('page', 1),
+            5
         );
 
         return $this->render('AppBundle:User:profile.html.twig', array(

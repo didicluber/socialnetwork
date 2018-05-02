@@ -7,7 +7,6 @@ use Doctrine\ORM\EntityRepository;
 class UserRepository extends EntityRepository
 {
     /**
-     * Provee de consulta custom para poder obtener los usuarios sigue el usuario logueado
      *
      * @param $user
      * @return \Doctrine\ORM\QueryBuilder

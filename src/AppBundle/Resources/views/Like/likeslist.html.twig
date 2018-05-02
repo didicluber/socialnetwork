@@ -9,11 +9,11 @@
      <div class="container">
 
          <div id="timeline" class="col-lg-12 box-default pull-left">
-             <h1 class="box-header">Publicaciones que le gustan a {{ profile_user.nick }}</h1>
+             <h1 class="box-header">Publications que vous aimez {{ profile_user.nick }}</h1>
 
              <div class="count">
                  <span class="label label-primary">
-                     Total de publicaciones: {{ likeslist.getTotalItemCount }}
+                 Total des publications:{{ likeslist.getTotalItemCount }}
                  </span>
              </div>
 
@@ -76,7 +76,7 @@
                                    aria-hidden="true"
                                    data-toggle="tooltip"
                                    data-placement="bottom"
-                                   title="Me gusta">
+                                   title="J'aime">
                              </span>
                              <span data-id="{{ publication.id }}"
                                    class="
@@ -87,7 +87,7 @@
                                    aria-hidden="true"
                                    data-toggle="tooltip"
                                    data-placement="bottom"
-                                   title="Ya no me gusta">
+                                   title="Je n'aime pas">
                              </span>
                          </div>
                          <small class="pull-left">{{ publication|numlikes }} Likes</small>

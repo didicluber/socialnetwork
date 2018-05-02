@@ -3,18 +3,18 @@
 {% block content %}
     <div class="container">
         <div class="col-lg-12 box-default">
-            <h1 class="box-header">Mensajeria privada</h1>
+            <h1 class="box-header">Messages privés</h1>
             <div id="new-private-message" class="col-lg-6">
-                <h4>Enviar nuevo mensaje privado</h4>
+                <h4>Envoyer un nouveau message privé</h4>
                 {{ form_start(form, {'enctype':'multipart/form-data'}) }}
 
                 {{ form_end(form) }}
                 <br>
-                <a href="{{ path('private_message_sended') }}" class="btn btn-warning">Mensajes Enviados</a>
+                <a href="{{ path('private_message_sended') }}" class="btn btn-warning">Messages envoyés</a>
             </div>
 
             <div class="col-lg-6">
-                <h4>Mensajes Recibidos</h4>
+                <h4>Messages reçus</h4>
                 <hr />
 
                 <div class="box-content">

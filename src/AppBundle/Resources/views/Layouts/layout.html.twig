@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>{% block title %} SF3 NETWORK {% endblock %}</title>
+        <title>{% block title %} Reseau Social {% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" type="text/css">
             <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.cosmo.min.css') }}" type="text/css">
@@ -26,14 +26,14 @@
 
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Navegación</span>
+                            <span class="sr-only">Naviguer</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="{{ path("app_homepage") }}">
                             <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
-                            NETWORK
+                            ECE PARIS
                         </a>
                     </div>
 
@@ -44,33 +44,33 @@
                                     <a href="{{ path("login") }}">
                                         <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
                                         &nbsp;
-                                        Entrar
+                                        Entrer
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{ path("register") }}">
                                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                                         &nbsp;
-                                        Registro
+                                        S'inscrire
                                     </a>
                                 </li>
                             {% else %}
                                 <li>
                                     <a href="{{ path("app_homepage") }}">
                                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                                        &nbsp; Inicio
+                                        &nbsp; Accueil
                                     </a>
                                 </li>
                                 <li>
                                     <a href="{{ path("user_list") }}">
                                         <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-                                        &nbsp; Gente
+                                        &nbsp; Utilisateurs
                                     </a>
                                 </li>
                                 <li>
                                     <form action="{{ path('user_search') }}" class="navbar-form navbar-left">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Buscar gente" name="search">
+                                            <input type="text" class="form-control" placeholder="Recherche un utilisateur" name="search">
                                         </div>
                                         <button type="submit" class="btn btn-default">
                                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -87,7 +87,7 @@
                                 <li>
                                     <a href="{{ path("private_message_index") }}">
                                         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                                        &nbsp; Mensajes Privados
+                                        &nbsp; Message privés
                                         <span class="label label-success label-notifications-msg"></span>
                                     </a>
                                 </li>
@@ -95,7 +95,7 @@
                                 <li>
                                     <a href="{{ path("notifications_page") }}">
                                         <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
-                                        &nbsp; Notificaciones
+                                        &nbsp; Notifications
                                         <span class="label label-success label-notifications"></span>
                                     </a>
                                 </li>
@@ -119,26 +119,26 @@
                                         <li>
                                             <a href="{{ path('user_profile', {'nick': app.user.nick}) }}">
                                                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                                                &nbsp; Mi perfil
+                                                &nbsp;Mon profil
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ path("user_edit") }}">
                                                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                                                &nbsp; Mis datos
+                                                &nbsp; Mes informations
                                             </a>
                                         </li>
                                         <li role="separator" class="divider"></li>
                                         <li>
                                             <a href="{{ path("logout") }}">
                                                 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-                                                &nbsp; Salir
+                                                &nbsp; Deconnexion
                                             </a>
                                         </li>
                                         <li>
                                             <a href="">
                                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                                                &nbsp; Ayuda
+                                                &nbsp; Aide
                                             </a>
                                         </li>
                                     </ul>
@@ -168,7 +168,7 @@
         <footer class="col-lg-12">
             <hr>
             <div class="container">
-                <p class="text-muted">Red social en Symfony 3</p>
+                <p class="text-muted">ECE PARIS</p>
             </div>
         </footer>
     </body>

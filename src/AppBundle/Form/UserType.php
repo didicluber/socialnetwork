@@ -17,7 +17,7 @@ class UserType extends AbstractType
 {
 
     /**
-     * Define los campos del formulario de edición de perfil
+     *
      *
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -26,49 +26,49 @@ class UserType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                'label' => 'Nombre',
+                'label' => 'Nom',
                 'required' => 'required',
                 'attr' => array(
                     'class' => 'form-name form-control'
                 )
             ))
             ->add('surname', TextType::class, array(
-                'label' => 'Apellido',
+                'label' => 'Prenom',
                 'required' => 'required',
                 'attr' => array(
                     'class' => 'form-surname form-control'
                 )
             ))
             ->add('nick', TextType::class, array(
-                'label' => 'Nick',
+                'label' => 'Pseudo',
                 'required' => 'required',
                 'attr' => array(
                     'class' => 'form-nick form-control'
                 )
             ))
             ->add('email', EmailType::class, array(
-                'label' => 'Correo electrónico',
+                'label' => 'Email',
                 'required' => 'required',
                 'attr' => array(
                     'class' => 'form-email form-control'
                 )
             ))
             ->add('bio', TextareaType::class, array(
-                'label' => 'Biografia',
+                'label' => 'Bio',
                 'required' => false,
                 'attr' => array(
                     'class' => 'form-bio form-control'
                 )
             ))
             ->add('image', FileType::class, array(
-                'label' => 'Foto',
+                'label' => 'Photo',
                 'required' => false,
                 'data_class' => null,
                 'attr' => array(
                     'class' => 'form-image form-control'
                 )
             ))
-            ->add('Guardar', SubmitType::class, array(
+            ->add('Envoyer', SubmitType::class, array(
                 "attr" => array(
                     "class" => "form-submit btn btn-success"
                 )

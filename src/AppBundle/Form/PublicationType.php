@@ -14,7 +14,6 @@ class PublicationType extends AbstractType
 {
 
     /**
-     * Define los campos del formulario de publicacion
      *
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -23,14 +22,14 @@ class PublicationType extends AbstractType
     {
         $builder
             ->add('texto', TextareaType::class, array(
-                'label' => 'Mensaje',
+                'label' => 'Message',
                 'required' => 'required',
                 'attr' => array(
                     'class' => 'form-control'
                 )
             ))
             ->add('image', FileType::class, array(
-                'label' => 'Foto',
+                'label' => 'photo',
                 'required' => false,
                 'data_class' => null,
                 'attr' => array(
@@ -38,14 +37,14 @@ class PublicationType extends AbstractType
                 )
             ))
             ->add('document', FileType::class, array(
-                'label' => 'Documento',
+                'label' => 'Document',
                 'required' => false,
                 'data_class' => null,
                 'attr' => array(
                     'class' => 'form-control'
                 )
             ))
-            ->add('Enviar', SubmitType::class, array(
+            ->add('Envoyer', SubmitType::class, array(
                 "attr" => array(
                     "class" => "btn btn-success"
                 )

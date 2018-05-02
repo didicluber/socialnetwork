@@ -23,10 +23,6 @@ class PublicationController extends Controller
     }
 
     /**
-     * Crea formulario con la clase PublicationType y lo renderiza en vista
-     * Comprueba el formulario enviado y guarda los datos
-     * Además pasa a la vista las publicaciones del timeline
-     *
      * @param Request $request
      * @return $this
      */
@@ -85,13 +81,13 @@ class PublicationController extends Controller
                 $flush = $em->flush();
 
                 if ($flush == null) {
-                    $status = 'La publicación se ha creado correctamente !!';
+                    $status = 'La publication a été crée correctement !!';
                 } else {
-                    $status = 'Error al añadir la publicación !!';
+                    $status = 'Erreur lors de l\'ajout de la publication !!';
                 }
 
             } else {
-                $status = 'La publicación no se ha creado, porque el formulario no es válido';
+                $status = 'Le message n\'a pas été créé, car le formulaire n\'est pas valide';
             }
 
             $this->session->getFlashBag()->add("status", $status);
@@ -107,10 +103,6 @@ class PublicationController extends Controller
     }
 
     /**
-     * Recupera mediante los datos de usuario logueado sus publicaciones
-     * y las publicaciones de las personas que sigue
-     * para ello se usa una subconsulta en dql
-     * se devuelve un objeto con los resultados paginados
      *
      * @param $request
      * @return \Knp\Component\Pager\Pagination\PaginationInterface
@@ -144,8 +136,8 @@ class PublicationController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $query,
-            $request->query->getInt('page', 1), // parametro request de paginacion y en que num de pagina empieza
-            5 //numero de registros por paginas
+            $request->query->getInt('page', 1),
+            5
         );
 
         return $pagination;
@@ -153,9 +145,6 @@ class PublicationController extends Controller
 
 
     /**
-     * Borrado de Publicaciones via AJAX a traves de URL
-     * Solo el autor de la publicacion puede borrar sus publicaciones
-     *
      * @param null $id
      * @return Response
      */
@@ -172,12 +161,12 @@ class PublicationController extends Controller
             $flush = $em->flush();
 
             if ($flush == null){
-                $status = 'La publicación se ha borrado correctamente';
+                $status = 'La publication a été supprimée avec succès';
             } else {
-                $status = 'La publicación no se ha borrado';
+                $status = 'La publication n\'a pas été supprimée';
             }
         } else {
-            $status = 'La publicación no se ha borrado';
+            $status = 'La publication n\'a pas été supprimée';
         }
 
         return new Response($status);

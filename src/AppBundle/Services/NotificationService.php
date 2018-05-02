@@ -14,7 +14,6 @@ class NotificationService
     }
 
     /**
-     * Guarda los datos para una notificación de actividad
      *
      * @param User $user usuario receptor de la notificacion
      * @param string $type tipo de notificacion
@@ -47,7 +46,6 @@ class NotificationService
     }
 
     /**
-     * Marca notificaciones como leidas
      *
      * @param User $user usuario receptor de la notificacion
      * @return bool

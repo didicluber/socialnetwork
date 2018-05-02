@@ -25,11 +25,6 @@ class PrivateMessageController extends Controller
     }
 
     /**
-     * Renderiza en vista el formulario para enviar Mensajes Privados para ello
-     * usa clase PrivateMessageType para definir los campos del formulario
-     * Procesa el formulario y guarda los datos, también pasa los
-     * mensajes recibidos a la vista para que se muestren
-     *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
@@ -71,7 +66,7 @@ class PrivateMessageController extends Controller
                 // upload file
                 $doc = $form['file']->getData();
                 if (!empty($doc) && $doc != null) {
-                    $ext = $doc->guessExtension(); // obtencion de extension
+                    $ext = $doc->guessExtension();
 
                     if ($ext == 'pdf') {
                         $file_name = $user->getId().'_docpmessage_'.time().'.'.$ext;
@@ -93,13 +88,13 @@ class PrivateMessageController extends Controller
                 $flush = $em->flush();
 
                 if ($flush == null) {
-                    $status = 'El mensaje privado se ha enviado correctamente';
+                    $status = 'Le message privé a été envoyé correctement';
                 } else {
-                    $status = 'Error al enviar el mensaje privado';
+                    $status = 'Erreur d\'envoi de message privé';
                 }
 
             } else {
-                $status = 'El mensaje privado no se ha enviado';
+                $status = 'Le message privé n\'a pas été envoyé';
             }
 
             $this->session->getFlashBag()->add("status", $status);
@@ -117,7 +112,6 @@ class PrivateMessageController extends Controller
     }
 
     /**
-     * Muestra vista con los mensajes enviados por el usuario logueado
      *
      * @param Request $request
      * @return Response
@@ -134,9 +128,6 @@ class PrivateMessageController extends Controller
     }
 
     /**
-     * Devuelve los mensajes privados recibidos o enviados dependiendo
-     * del parámetro type
-     *
      * @param $request
      * @param null $type si es "sended" devuelve mensajes enviados
      * @return \Knp\Component\Pager\Pagination\PaginationInterface
@@ -168,8 +159,6 @@ class PrivateMessageController extends Controller
     }
 
     /**
-     * Devuelve numero de mensajes privados no leidos
-     * este método es llamado por AJAX
      *
      * @return Response
      */
@@ -178,8 +167,6 @@ class PrivateMessageController extends Controller
         $isAjax = $request->isXmlHttpRequest();
 
         if (!$isAjax) {
-            // si se indica ../../ redirecciona a /private-message
-            // si no se indica redirecciona a /private-message/notification/private-message
             return $this->redirect("../../private-message");
         }
 
@@ -196,7 +183,6 @@ class PrivateMessageController extends Controller
     }
 
     /**
-     * Marca como leidos los mensajes privados del usuario logueado
      *
      * @param $em
      * @param $user

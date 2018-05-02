@@ -7,9 +7,8 @@
 
 {% block content %}
     <div class="container">
-
         <div id="notifications" class="col-lg-12 box-default pull-left">
-            <h1 class="box-header">Notificaciones</h1>
+            <h1 class="box-header">Notifications</h1>
             <div class="box-content">
                 {% for notification in notifications %}
                     <div class="col-lg-12 notification-item">
@@ -23,16 +22,14 @@
                                 <a href="{{ path('user_profile', {'nick': user_of_action.nick}) }}">
                                     {{ user_of_action.name }} {{ user_of_action.surname }}
                                 </a>
-                                  te está siguiendo
+                                vous suit
                             {% endif %}
-
                             {% if notification.type == "like" %}
                                 <a href="{{ path('user_profile', {'nick': user_of_action.nick}) }}">
                                     {{ user_of_action.name }} {{ user_of_action.surname }}
                                 </a>
-                                  le ha dado Me Gusta a una de tus publicaciones
+                                a aimé l'un de vos messages
                             {% endif %}
-
                         </div>
                     </div>
                 {% endfor %}

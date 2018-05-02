@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="col-lg-4 box-form">
-        <h2>Identificarse</h2>
+        <h2>Connexion</h2>
         <hr>
 
         {# para debug muestra datos de usuario loggeado almacenado en la sesion
@@ -15,10 +15,10 @@
             <label>Email</label>
             <input type="email" id="username" name="_username" value="{{ last_username }}" class="form-control">
 
-            <label>Contraseña</label>
+            <label>Mot de passe</label>
             <input type="password" id="password" name="_password" class="form-control">
 
-            <input type="submit" value="Entrar" class="btn btn-success">
+            <input type="submit" value="Entrer" class="btn btn-success">
             <input type="hidden" name="_target_path" value="/home">
         </form>
 

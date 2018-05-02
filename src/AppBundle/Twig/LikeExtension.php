@@ -28,7 +28,6 @@ class LikeExtension extends \Twig_Extension
 
 
     /**
-     * Permite comprobar si se ha marcado como me gusta a una publicación
      *
      * @param $user
      * @param $publication
@@ -52,7 +51,6 @@ class LikeExtension extends \Twig_Extension
     }
 
     /**
-     * Obtención de número de likes de una publicación
      *
      * @param $publication
      * @return int

@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     ias.extension(new IASTriggerExtension({
-        text: 'Ver más publicaciones',
+        text: 'Voir plus de publications',
         offset: 3
     }));
 
@@ -18,7 +18,7 @@ $(document).ready(function () {
     }));
 
     ias.extension(new IASNoneLeftExtension({
-        text: 'No hay más publicaciones'
+        text: 'Plus de publications'
     }));
 
     ias.on('ready', function(event) {

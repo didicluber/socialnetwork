@@ -19,9 +19,6 @@ class FollowController extends Controller
     }
 
     /**
-     * Persiste en la entidad Follow los datos del usuario en la sesion y
-     * el usuario que se sigue que se determina mediante una peticion request
-     *
      * @param Request $request
      * @return Response
      */
@@ -50,9 +47,9 @@ class FollowController extends Controller
         if ($flush == null){
             $notification = $this->get('app.notification_service');
             $notification->set($followed, 'follow', $user->getId());
-            $status = "Ahora estas siguiendo a este Usuario";
+            $status = "Vous suivez maintenant cet utilisateur";
         }else{
-            $status = "No se ha podido seguir a este Usuario";
+            $status = "Cet utilisateur n'a pas pu être suivi";
         }
 
         return new Response($status);
@@ -60,9 +57,6 @@ class FollowController extends Controller
     }
 
     /**
-     * Borra un registro de seguimiento usando entidad Follow, usuario logeado y
-     * parametro request de id de usuario que se sigue.
-     *
      * @param Request $request
      * @return Response
      */
@@ -88,9 +82,9 @@ class FollowController extends Controller
         $flush = $em->flush();
 
         if ($flush == null){
-            $status = "Has dejado de seguir a este Usuario";
+            $status = "Vous avez arrêté de suivre cet utilisateur";
         }else{
-            $status = "No se ha podido dejar de seguir a este Usuario";
+            $status = "Il n'a pas été possible d'arrêter de suivre cet utilisateur";
         }
 
         return new Response($status);
@@ -98,10 +92,6 @@ class FollowController extends Controller
     }
 
     /**
-     * Carga vista con lista de usuarios que esta siguiendo el usuario logueado
-     * o con lista de usuarios que siguen al usuario logueado
-     * para diferenciar se usa parametro type a través de URL
-     *
      * @param Request $request
      * @param null $nick
      * @param null $type
@@ -139,8 +129,8 @@ class FollowController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $query,
-            $request->query->getInt('page', 1), // parametro request de paginacion y en que num de pagina empieza
-            5 //numero de registros por paginas
+            $request->query->getInt('page', 1),
+            5
         );
 
         return $this->render('AppBundle:Follow:followslist.html.twig', array(

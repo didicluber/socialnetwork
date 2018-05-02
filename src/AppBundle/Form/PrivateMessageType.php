@@ -15,7 +15,6 @@ class PrivateMessageType extends AbstractType
 {
 
     /**
-     * Define los campos del formulario de mensaje privado
      *
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -35,20 +34,20 @@ class PrivateMessageType extends AbstractType
                 'choice_label' => function($user) {
                     return $user->getName()." ".$user->getSurname()." - ".$user->getNick();
                 },
-                'label' => 'Para:',
+                'label' => 'Pour:',
                 'attr' => array(
                     'class' => 'form-control'
                 )
             ))
             ->add('message', TextareaType::class, array(
-                'label' => 'Mensaje',
+                'label' => 'Message',
                 'required' => 'required',
                 'attr' => array(
                     'class' => 'form-control'
                 )
             ))
             ->add('image', FileType::class, array(
-                'label' => 'Imagen',
+                'label' => 'Image',
                 'required' => false,
                 'data_class' => null,
                 'attr' => array(
@@ -56,14 +55,14 @@ class PrivateMessageType extends AbstractType
                 )
             ))
             ->add('file', FileType::class, array(
-                'label' => 'Archivo',
+                'label' => 'Archive',
                 'required' => false,
                 'data_class' => null,
                 'attr' => array(
                     'class' => 'form-control'
                 )
             ))
-            ->add('Enviar', SubmitType::class, array(
+            ->add('Envoyer', SubmitType::class, array(
                 "attr" => array(
                     "class" => "btn btn-success"
                 )

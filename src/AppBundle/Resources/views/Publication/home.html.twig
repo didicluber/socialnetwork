@@ -9,7 +9,7 @@
      <div class="container">
 
          <div id="timeline" class="col-lg-7 box-default pull-left">
-             <h1 class="box-header">Timeline</h1>
+             <h1 class="box-header">Fil d'actualité</h1>
              <div class="box-content">
                  {% for publication in publications %}
                      <div class="col-lg-12 publication-item">
@@ -66,7 +66,7 @@
                                    aria-hidden="true"
                                    data-toggle="tooltip"
                                    data-placement="bottom"
-                                   title="Me gusta">
+                                   title="J'aime">
                              </span>
                              <span data-id="{{ publication.id }}"
                                    class="
@@ -77,7 +77,7 @@
                                    aria-hidden="true"
                                    data-toggle="tooltip"
                                    data-placement="bottom"
-                                   title="Ya no me gusta">
+                                   title="Je n'aime plus">
                              </span>
                          </div>
                          <small class="pull-left">{{ publication|numlikes }} Likes</small>
@@ -118,7 +118,7 @@
              <div class="follow-data">
                  <a href="{{ path('follows_list_users', {'nick': app.user.nick, 'type': 'following'}) }}">
                      <span class="label-stat">
-                         Siguiendo
+                        Suivant
                      </span>
                      <span class="number-stat">
                          {{ user_all_stats.following }}
@@ -129,7 +129,7 @@
              <div class="follow-data">
                  <a href="{{ path('follows_list_users', {'nick': app.user.nick, 'type': 'followers'}) }}">
                      <span class="label-stat">
-                         Seguidores
+                      Abonnés
                      </span>
                      <span class="number-stat">
                          {{ user_all_stats.followers }}
@@ -140,7 +140,7 @@
              <div class="follow-data">
                  <a href="{{ path('user_profile', {'nick': app.user.nick}) }}">
                      <span class="label-stat">
-                         Publicaciones
+                       Publications
                      </span>
                      <span class="number-stat">
                          {{ user_all_stats.publications }}
@@ -151,7 +151,7 @@
              <div class="follow-data">
                  <a href="{{ path('user_likes', {'nick': app.user.nick}) }}">
                      <span class="label-stat">
-                         Me gustan
+                         J'aime
                      </span>
                      <span class="number-stat">
                          {{ user_all_stats.likes }}
@@ -162,7 +162,7 @@
          </div>
 
          <div id="new-publication" class="col-lg-4 box-default pull-left">
-             <h1 class="box-header">Crear publicación</h1>
+             <h1 class="box-header">Créer une publication</h1>
 
              {{ form_start(form, {'action':'', 'method':'POST'}) }}
              {{ form_errors(form) }}

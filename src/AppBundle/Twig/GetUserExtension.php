@@ -27,7 +27,6 @@ class GetUserExtension extends \Twig_Extension
 
 
     /**
-     * Devuelve Objeto User al pasar un id
      *
      * @param $user_id
      * @return User

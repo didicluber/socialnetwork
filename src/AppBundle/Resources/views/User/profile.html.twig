@@ -25,11 +25,11 @@
                     {# el usuario del perfil(user) sigue al usuario logueado(app.user)? #}
                     {% if user|isfollow(app.user) == true %}
                         <button class="btn btn-sm btn-disable disable">
-                            Te sigue
+                           Vous suit
                         </button>
                     {% else %}
                         <button class="btn btn-sm btn-disable disable">
-                            No te sigue
+                           Ne vous suit pas
                         </button>
                     {% endif %}
 
@@ -48,7 +48,7 @@
                                     {% endif %}
                                     " data-followed="{{ user.id }}">
                         <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-                        Dejar de seguir
+                     Ne plus suivre
                     </button>
                 </div>
             {% endif %}
@@ -75,7 +75,7 @@
                 <div class="follow-data">
                     <a href="{{ path('follows_list_users', {'nick': user.nick, 'type': 'following'}) }}">
                      <span class="label-stat">
-                         Siguiendo
+                         Suivant
                      </span>
                         <span class="number-stat">
                          {{ user_all_stats.following }}
@@ -86,7 +86,7 @@
                 <div class="follow-data">
                     <a href="{{ path('follows_list_users', {'nick': user.nick, 'type': 'followers'}) }}">
                      <span class="label-stat">
-                         Seguidores
+                        Abonnés
                      </span>
                         <span class="number-stat">
                          {{ user_all_stats.followers }}
@@ -97,7 +97,7 @@
                 <div class="follow-data">
                     <a href="{{ path('user_profile', {'nick': user.nick}) }}">
                      <span class="label-stat">
-                         Publicaciones
+                         Publications
                      </span>
                         <span class="number-stat">
                          {{ user_all_stats.publications }}
@@ -108,7 +108,7 @@
                 <div class="follow-data">
                     <a href="{{ path('user_likes', {'nick': user.nick}) }}">
                      <span class="label-stat">
-                         Me gustan
+                        J'aime
                      </span>
                         <span class="number-stat">
                          {{ user_all_stats.likes }}
@@ -177,7 +177,7 @@
                                    aria-hidden="true"
                                    data-toggle="tooltip"
                                    data-placement="bottom"
-                                   title="Me gusta">
+                                   title="J'aime">
                              </span>
                         <span data-id="{{ publication.id }}"
                               class="
@@ -188,7 +188,7 @@
                               aria-hidden="true"
                               data-toggle="tooltip"
                               data-placement="bottom"
-                              title="Ya no me gusta">
+                              title="Je n'aime plus">
                              </span>
                     </div>
                     <small class="pull-left">{{ publication|numlikes }} Likes</small>

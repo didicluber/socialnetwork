@@ -26,7 +26,6 @@ class UserStatsExtension extends \Twig_Extension
     }
 
     /**
-     * Devuelve array con datos de actividad del usuario
      *
      * @param $user
      * @return array

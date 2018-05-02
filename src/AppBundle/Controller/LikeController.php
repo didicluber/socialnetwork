@@ -13,9 +13,6 @@ class LikeController extends Controller
 {
 
     /**
-     * Guarda los likes de publicaciones que el usuario hace
-     * Se usa AJAX, el id se recibe por URL en una llamada AJAX
-     *
      * @param null $id
      * @return Response
      */
@@ -41,22 +38,19 @@ class LikeController extends Controller
             if($flush == null) {
                 $notification = $this->get('app.notification_service');
                 $notification->set($publication->getUser(), 'like', $user->getId(), $publication->getId());
-                $status = 'Te gusta esta publicación!';
+                $status = 'Vous aimez cette publication!';
             } else {
-                $status = 'No se ha podido guardar el Me Gusta';
+                $status = 'Impossible de sauvegarder le Like';
             }
         }
         else{
-            $status = 'you already like it!';
+            $status = 'vous l\'aimez déjà!';
         }
 
         return new Response($status);
     }
 
     /**
-     * Elimina los likes de publicaciones que el usuario hace
-     * Se usa AJAX, el id publication se recibe por URL en una llamada AJAX
-     *
      * @param null $id
      * @return Response
      */
@@ -85,16 +79,15 @@ class LikeController extends Controller
         $flush = $em->flush();
 
         if($flush == null) {
-            $status = 'Ya no te gusta esta publicación!';
+            $status = 'Vous n\'aimez plus cette publication!';
         } else {
-            $status = 'No se ha podido quitar el Me Gusta';
+            $status = 'Impossible de supprimer le Like';
         }
 
         return new Response($status);
     }
 
     /**
-     * Carga vista con lista de publicaciones que le han gustado al usuario
      *
      * @param Request $request
      * @param null $nick
@@ -125,8 +118,8 @@ class LikeController extends Controller
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $query,
-            $request->query->getInt('page', 1), // parametro request de paginacion y en que num de pagina empieza
-            5 //numero de registros por paginas
+            $request->query->getInt('page', 1),
+            5
         );
 
         return $this->render('AppBundle:Like:likeslist.html.twig', array(

@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     ias.extension(new IASTriggerExtension({
-        text: 'Ver más personas',
+        text: 'Voir plus de gens',
         offset: 3
     }));
 
@@ -18,7 +18,7 @@ $(document).ready(function () {
     }));
 
     ias.extension(new IASNoneLeftExtension({
-        text: 'No hay más personas'
+        text: 'Plus de personnes'
     }));
 
     ias.on('ready', function(event) {

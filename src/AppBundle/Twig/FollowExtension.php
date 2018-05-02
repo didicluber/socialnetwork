@@ -26,7 +26,6 @@ class FollowExtension extends \Twig_Extension
     }
 
     /**
-     * Método comprueba si se sigue o no a un usuario
      *
      * @param $user
      * @param $followed_id
