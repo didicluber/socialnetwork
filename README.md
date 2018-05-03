@@ -1,34 +1,27 @@
-# Red social estilo Twitter en Symfony 3.1
+# Reseau social en Symfony 3.1
 
-## Video Demostración
 
-[Ver video Demo][14]
+## Instructions
+### Commande d'installlation
 
-## Instrucciones
-
-### Comandos de instalación
-
-* Instalar dependencias:
+* Installer les dependance:
 
  `$ composer install`
 
-* Crear base de datos y configurar parametros en parameters.yml
-* Crear estructura de tablas
+* Cree bdd  apres avoir parametrer le fichier parameters.yml garce a la commande :
+ `$ php bin/console doctrine:database:create  
+ `
+ 
+* Mise a jour de la table
 
 `$ php bin/console doctrine:schema:create`
 
-* Importar datos sql de prueba de app/Resources
 
-### Datos de acceso a un usuario
 
-email: fran@aragon.com
+## Outils utilisée :
 
-password: fran
-
-### Comandos útiles
-
-* Limpiar cache y logs
-
-`$ php bin/console cache:clear --env=prod --no-debug`
-
-[14]: https://www.youtube.com/watch?v=cFny57BugXI
+* Bootstrap
+* Symfony 3.1
+* KNPBundlePagination
+* FOSUserBundle
+* VichUploadBundle
