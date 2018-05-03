@@ -1,0 +1,64 @@
+{% extends "AppBundle:Layouts:layout.html.twig" %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/custom/home.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div id="timeline" class="col-lg-7 box-default pull-left">
+            <h1 class="box-header">Liste des offres d'emploi</h1>
+            <div class="box-content">
+                {% for job in jobs %}
+
+                    <div class="col-lg-12 publication-item">
+                        <a  href="{{ path('jobs_show', { 'id': job.id }) }}">
+                            <div class="avatar">
+                                {% if job.image == null %}
+                                    <img src="{{ asset('assets/images/default.png') }}" alt="{{ app.user.nick }}">
+                                {% else %}
+                                    <img src="{{ asset('uploads/media/'~app.user.id~'_usermedia/company/images'~job.user.image) }}" alt="{{ app.user.entreprise }}">
+                                {% endif %}
+                            </div>
+                        <div class="publication-item-content">
+                            <p>{% for user in users %}
+                                    <a class="pub-name-link" href="{{ path('jobs_show', { 'id': job.id }) }}">
+                                        {{ user.entreprise }}
+                                    </a>
+                                {% endfor %}
+
+                                <span class="nickname">
+                     - {{ job.titre}} -
+                 </span>
+                                <span class="pub-date">
+                                    {% if job.createdAt %}{{ job.createdAt|long_time }}{% endif %}
+                                 </span>
+                            </p>
+                            <p><u>Description :</u>  {{ job.description }}</p>
+
+</div>
+                        </a>
+                        <div class="clearfix"></div>
+                        <hr>
+
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+        </div>
+
+
+        <div id="new-publication" class="col-lg-4 box-default pull-left">
+            <h1 class="box-header">Poster votre annonce</h1>
+
+            {{ form_start(form, {'action':'', 'method':'POST'}) }}
+            {{ form_errors(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

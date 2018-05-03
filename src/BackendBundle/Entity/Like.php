@@ -81,4 +81,3 @@ class Like
         return $this->publication;
     }
 }
-

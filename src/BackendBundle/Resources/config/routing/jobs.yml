@@ -1,0 +1,24 @@
+jobs_index:
+    path:     /
+    defaults: { _controller: "BackendBundle:Jobs:index" }
+    methods:  [GET, POST]
+
+jobs_show:
+    path:     /{id}/show
+    defaults: { _controller: "BackendBundle:Jobs:show" }
+    methods:  GET
+
+jobs_new:
+    path:     /new
+    defaults: { _controller: "BackendBundle:Jobs:new" }
+    methods:  [GET, POST]
+
+jobs_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BackendBundle:Jobs:edit" }
+    methods:  [GET, POST]
+
+jobs_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BackendBundle:Jobs:delete" }
+    methods:  DELETE

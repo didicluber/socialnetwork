@@ -58,10 +58,6 @@ class User implements UserInterface, \Serializable
      */
     private $image;
 
-
-    /**
-     * campo de BD que va a actuar como username
-     */
     public function getUsername() {
         return $this->email;
     }
@@ -70,9 +66,7 @@ class User implements UserInterface, \Serializable
         return null;
     }
 
-    /**
-     * retorna roles de usuario
-     */
+
     public function getRoles() {
         return array('ROLE_USER', 'ROLE_ADMIN');
     }
@@ -373,5 +367,34 @@ class User implements UserInterface, \Serializable
     public function getDiplome()
     {
         return $this->diplome;
+    }
+    /**
+     * @var string
+     */
+    private $entreprise;
+
+
+    /**
+     * Set entreprise
+     *
+     * @param string $entreprise
+     *
+     * @return User
+     */
+    public function setEntreprise($entreprise)
+    {
+        $this->entreprise = $entreprise;
+
+        return $this;
+    }
+
+    /**
+     * Get entreprise
+     *
+     * @return string
+     */
+    public function getEntreprise()
+    {
+        return $this->entreprise;
     }
 }

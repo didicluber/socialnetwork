@@ -14,10 +14,9 @@ class DefaultController extends Controller
 
         $user = $user_repo->find(1);
 
-        echo "Bienvenido ".$user->getName()." ".$user->getSurname();
+        echo "Bienvenue ".$user->getName()." ".$user->getSurname();
 
-        var_dump($user);
-        die();
+
 
 
         return $this->render('BackendBundle:Default:index.html.twig');

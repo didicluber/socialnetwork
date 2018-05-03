@@ -65,6 +65,12 @@ class UserType extends AbstractType
                 'attr' => array(
                     'class' => 'form-diplome form-control'
                 )
+            ))->add('entreprise', TextType::class, array(
+                'label' => 'A quelle entreprise travaillez vous',
+                'required' => false,
+                'attr' => array(
+                    'class' => 'form-entreprise form-control'
+                )
             ))
             ->add('image', FileType::class, array(
                 'label' => 'Photo',

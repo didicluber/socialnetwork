@@ -50,6 +50,7 @@ class Publication
      */
     public function getId()
     {
+        
         return $this->id;
     }
 
@@ -197,4 +198,3 @@ class Publication
         return $this->user;
     }
 }
-

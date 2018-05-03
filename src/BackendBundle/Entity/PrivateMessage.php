@@ -226,4 +226,3 @@ class PrivateMessage
         return $this->receiver;
     }
 }
-

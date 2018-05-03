@@ -85,13 +85,12 @@ class UserController extends Controller
                     $encoder = $factory->getEncoder($user);
                     $password = $encoder->encodePassword($form->get("password")->getData(), $user->getSalt());
 
-                    // configurar datos restantes del objeto User
                     $user->setPassword($password);
                     $user->setRole("ROLE_USER");
                     $user->setImage(null);
 
                     $em->persist($user);
-                    $flush = $em->flush();//guardar en BD
+                    $flush = $em->flush();
 
                     if ($flush == null) {
                         $status = "Vous vous êtes inscrit correctement";

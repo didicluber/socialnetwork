@@ -1,3 +1,4 @@
-backend_homepage:
-    path:     /
-    defaults: { _controller: BackendBundle:Default:index }
+backend_jobs:
+    resource: "@BackendBundle/Resources/config/routing/jobs.yml"
+    prefix:   /jobs
+
